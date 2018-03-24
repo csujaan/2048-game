@@ -58,6 +58,9 @@ def up_swipe():
                 if matrix[c][r-1]==0:
                     matrix[c][r-1],matrix[c][r]=matrix[c][r],matrix[c][r-1]
     generate()
+     """Printing the matrix"""
+    for i in range(x):
+        print matrix[i]
 
 
 
@@ -65,28 +68,47 @@ def up_swipe():
 def down_swipe():
     for r in range(order-1):
         for c in range(order):
-            while matrix[c][r-1]==0:
+            while matrix[c][r+1]==0:
                 if matrix[c][r]==matrix[c][r+1]:
                     matrix[c][r+1]=matrix[c][r]+matrix[c][r+1]
                     matrix[c][r]=0
                 if matrix[c][r+1]==0:
                     matrix[c][r+1],matrix[c][r]=matrix[c][r],matrix[c][r+1]
     generate()
+     """Printing the matrix"""
+    for i in range(x):
+        print matrix[i]
 
 """Left swipe function"""   
 def left_swipe():
-
-
-
+     for r in range(order):
+        for c in range(1,order):
+            while matrix[c-1][r]==0:
+                if matrix[c][r]==matrix[c-1][r] and matrix[c-1][r]!=0:
+                    matrix[c-1][r]=matrix[c][r]+matrix[c-1][r]
+                    matrix[c][r]=0
+                if matrix[c-1][r]==0:
+                    matrix[c-1][r],matrix[c][r]=matrix[c][r],matrix[c-1][r]
     generate()
+     """Printing the matrix"""
+    for i in range(x):
+        print matrix[i]
+    
 
 """Right swipe function"""
 def right_swipe():
-
-
-
+    for r in range(order):
+        for c in range(order-1):
+            while matrix[c+1][r]==0:
+                if matrix[c][r]==matrix[c+1][r]:
+                    matrix[c+1][r]=matrix[c][r]+matrix[c+1][r]
+                    matrix[c][r]=0
+                if matrix[c+1][r]==0:
+                    matrix[c+1][r],matrix[c][r]=matrix[c][r],matrix[c+1][r]
     generate()
-
+     """Printing the matrix"""
+    for i in range(x):
+        print matrix[i]
 
 
 
