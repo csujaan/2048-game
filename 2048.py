@@ -28,17 +28,17 @@ def generate():
 
 
 """Taking keyboard input from user"""
-def swipe(score):
+def swipe():
     print "\n\nEnter....\n'w' to swipe up\n's' to swipe down\n'a' to swipe left\n'd' to swipe right\n"
     swipe_value=raw_input()
     if swipe_value =='W' or swipe_value=='w':
-        up_swipe(score)
+        up_swipe()
     elif swipe_value =='S' or swipe_value=='s':
-        down_swipe(score)
+        down_swipe()
     elif swipe_value =='A' or swipe_value=='a':
-        left_swipe(score)
+        left_swipe()
     elif swipe_value =='D' or swipe_value=='d':
-        right_swipe(score)
+        right_swipe()
     else:
         print "\nPlease enter a valid choice!\n\n"
 
@@ -46,7 +46,8 @@ def swipe(score):
 
 
 """Up swipe function"""   
-def up_swipe(score):
+def up_swipe():
+    global score
     for c in range(order):
         for traverse in range(order-1):
             for r in range(order-traverse-1):
@@ -67,7 +68,8 @@ def up_swipe(score):
 
 
 """Down swipe function"""
-def down_swipe(score):
+def down_swipe():
+    global score
     for c in range(order):
         for traverse in range(order,1,-1):
             for r in range(order-1,order-traverse-1,-1):
@@ -88,7 +90,8 @@ def down_swipe(score):
 
 
 """Left swipe function"""
-def left_swipe(score):
+def left_swipe():
+    global score
     for c in range(order):
         for traverse in range(order-1):
             for r in range(order-traverse-1):
@@ -109,7 +112,8 @@ def left_swipe(score):
 
 
 """Right swipe function"""
-def right_swipe(score):
+def right_swipe():
+    global score
     for c in range(order):
         for traverse in range(order,1,-1):
             for r in range(order-1,order-traverse-1,-1):
@@ -147,4 +151,4 @@ initials()
 while True:
     print "____________________________________________"
     printing()
-    swipe(score)
+    swipe()
